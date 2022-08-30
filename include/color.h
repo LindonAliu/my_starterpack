@@ -15,11 +15,11 @@
     #define CYAN "\033[0;36m"
     #define WHITE "\033[0;37m"
 
-    #define RED_TXT(text) "\033[0;31m" text "\033[0;37m"
-    #define GREEN_TXT(text) "\033[0;32m" text "\033[0;37m"
-    #define YELLOW_TXT(text) "\033[0;33m" text "\033[0;37m"
-    #define PUPRLE_TXT(text) "\033[0;95m" text "\033[0;37m"
-    #define CYAN_TXT(text) "\033[0;36m" text "\033[0;37m"
-    #define WHITE_TXT(text) "\033[0;37m" text "\033[0;37m"
+    #define RED_TXT(text) RED text WHITE
+    #define GREEN_TXT(text) GREEN text WHITE
+    #define YELLOW_TXT(text) YELLOW text WHITE
+    #define PUPRLE_TXT(text) PUPRLE text WHITE
+    #define CYAN_TXT(text) CYAN text WHITE
+    #define WHITE_TXT(text) WHITE text WHITE
 
 #endif/* !COLOR_H_ */
