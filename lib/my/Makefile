@@ -27,10 +27,12 @@ all:	header $(NAME)
 
 header:
 	@mkdir -p $(H_DEST)
-	@cp $(HEADER) $(H_DEST) && printf "header copied to $(H_DEST)\n"
+	@cp $(HEADER) $(H_DEST)
+	@printf "\033[0;33mheader copied to $(H_DEST)\n\033[0;37m"
 
 $(NAME):	$(OBJS)
-	@$(ARCHIVER) rc $(NAME) $(OBJS) && printf "library built\n"
+	@$(ARCHIVER) rc $(NAME) $(OBJS)
+	@printf "\033[0;32mlibrary built\n\033[0;37m"
 
 debug:	CPPFLAGS += -g3
 debug:	re
@@ -42,6 +44,7 @@ clean:
 	@$(RM) -r obj
 
 fclean:	clean
-	@$(RM) $(NAME) && printf "library cleaned successfully\n" || printf "try sudo make fclean\n"
+	@$(RM) $(NAME)
+	@printf "\033[0;31mlibrary cleaned successfully\n\033[0;37m"
 
 .PHONY: all debug re clean fclean

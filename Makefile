@@ -33,9 +33,9 @@ LDFLAGS		=	-Llib -lmy
 all:	$(EXEC)
 
 tests_run:	clean_cov $(TEST)
-	@./$(TEST)
-	@gcovr
-	@gcovr --branches && printf "all tests are exected\n"
+	@./$(TEST) && printf "all tests are executed\n"
+	@printf "\033[0;31mcoverage :\n\033[0;37m" && gcovr --exclude tests
+	@printf "\033[0;31mbranches coverage :\n\033[0;37m" && gcovr --branches --exclude tests
 
 obj/build/%.o:	sources/%.c
 	@mkdir -p $(@D)
@@ -50,7 +50,7 @@ obj/tests/%.o:	tests/%.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
 $(EXEC):	$(LIBMY) $(OBJ_EXEC)
-	@$(CC) -o $(EXEC) $(OBJ_EXEC) $(LDFLAGS) && printf "executable built\n"
+	@$(CC) -o $(EXEC) $(OBJ_EXEC) $(LDFLAGS) && printf "\033[0;32mexecutable built\n\033[0;37m"
 
 $(TEST):	$(LIBMY) $(OBJ_TEST)
 	$(CC) -o $(TEST) $(OBJ_TEST) $(LDFLAGS) -lcriterion --coverage
@@ -70,7 +70,8 @@ clean:	clean_cov
 
 fclean: clean
 	@$(MAKE) fclean -C lib/my
-	@rm -f $(EXEC) $(TEST) && printf "clean successful\n"
+	@rm -f $(EXEC) $(TEST)
+	@printf "\033[0;31mclean successfull\n\033[0;37m"
 
 debug: CFLAGS += -g3
 debug: DEBUGFLAGS += debug
