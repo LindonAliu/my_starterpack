@@ -7,9 +7,9 @@
 
 #include <stddef.h>
 
-int my_len_array(const char **array)
+size_t my_len_array(const char **array)
 {
-    int i;
+    size_t i;
 
     for (i = 0; array[i] != NULL; i++);
     return (i);

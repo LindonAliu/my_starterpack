@@ -37,5 +37,7 @@ void my_free_array(char **array);
  */
 void my_freef(const char *format, ...);
 
+void free_string(va_list arg);
+void free_array(va_list arg);
 
 #endif/* !MY_FREEF_H_ */

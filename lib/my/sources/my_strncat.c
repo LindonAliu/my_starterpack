@@ -2,15 +2,17 @@
 ** EPITECH PROJECT, 2021
 ** my_strncat
 ** File description:
-** #FreeKOSOVOO
+** Concatenate two strings.
 */
 
-int my_strlen(char const *str);
+#include <stddef.h>
 
-char *my_strncat(char *dest, char const *src, int const nb)
+size_t my_strlen(const char *str);
+
+char *my_strncat(char *dest, const char *src, size_t nb)
 {
-    int len_dest = my_strlen(dest);
-    int i = 0;
+    size_t len_dest = my_strlen(dest);
+    size_t i = 0;
 
     for (i = 0; src[i] != '\0' && i < nb; i++)
         dest[len_dest + i] = src[i];

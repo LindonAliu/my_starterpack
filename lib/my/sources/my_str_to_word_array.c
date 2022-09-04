@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** my_str_to_word_array
 ** File description:
-** #FreeKOSOVO
+** Create a string array from a string.
 */
 
 #include "str.h"
@@ -11,7 +11,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-static int count_word(char const *str)
+static int count_word(const char *str)
 {
     int counter = 0;
     int size = my_strlen(str);
@@ -38,7 +38,7 @@ static char **mem_alloc_2d_array(int nb_rows)
     return arr;
 }
 
-static int size_word(char const *str, int i)
+static int size_word(const char *str, int i)
 {
     int k = 0;
 
@@ -50,7 +50,7 @@ static int size_word(char const *str, int i)
     return (k);
 }
 
-char **my_str_to_word_array(char const *str)
+char **my_str_to_word_array(const char *str)
 {
     int nb_word = count_word(str);
     char **tab = mem_alloc_2d_array(nb_word);

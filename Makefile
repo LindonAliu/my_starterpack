@@ -67,7 +67,6 @@ clean:	clean_cov
 	@rm -f $(OBJ_EXEC) $(OBJ_TEST)
 	@rm -rf obj
 
-
 fclean: clean
 	@$(MAKE) fclean -C lib/my
 	@rm -f $(EXEC) $(TEST)

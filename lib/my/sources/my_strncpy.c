@@ -2,16 +2,16 @@
 ** EPITECH PROJECT, 2021
 ** my_strncpy
 ** File description:
-** #FreeKOSOVO
+** Copies the first n bytes of src to dest.
 */
 
 #include <stddef.h>
 
-char *my_strncpy(char *dest, char const *src, size_t n)
+char *my_strncpy(char *dest, const char *src, size_t n)
 {
-    int i;
+    size_t i;
 
-    for (i = 0; src[i] != '\0' && (size_t)i < n; i += 1)
+    for (i = 0; src[i] != '\0' && i < n; i += 1)
         dest[i] = src[i];
     dest[i] = '\0';
     return (dest);

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 char *my_file_in_str(const char *filepath);
-char *my_strncpy(char *dest, const char *src, int n);
+char *my_strncpy(char *dest, const char *src, size_t n);
 
 char *my_get_first_line_file(const char *filepath)
 {
@@ -17,7 +17,7 @@ char *my_get_first_line_file(const char *filepath)
     int i;
 
     if (buffer == NULL)
-        return NULL;
+        return buffer;
     for (i = 0; buffer[i] != '\n'; ++i);
     result = malloc(sizeof(char) * (i + 1));
     if (result == NULL) {

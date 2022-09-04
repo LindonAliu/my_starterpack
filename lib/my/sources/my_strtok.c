@@ -5,12 +5,11 @@
 ** FreeKOSOVO
 */
 
-#include "my.h"
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-int check_letter(char const separator, char const c, int i, int check)
+int check_letter(char separator, char c, int i, int check)
 {
     if (check != 0)
         return (0);

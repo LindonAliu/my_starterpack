@@ -10,7 +10,7 @@
 
     #include <stdarg.h>
     #include <stddef.h>
-    #define NBR_FLAGS_PRINTF 5
+    #define NBR_FLAGS_PRINTF 6
 
 /**
  * @brief Struct for handling of flags.
@@ -83,12 +83,6 @@ int my_write_in_file(const char *filepath, const char *text);
 
 
 void my_printf(const char *format, ...);
-
-
-int sum_numbers(int n, ...);
-
-
-int sum_strings_length(int n, ...);
 
 
 #endif/* !MY_PRINTF_H_ */

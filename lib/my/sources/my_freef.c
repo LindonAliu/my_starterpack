@@ -5,18 +5,7 @@
 ** Free va args with the formated string.
 */
 
-#include <stdlib.h>
 #include "freef.h"
-
-static void free_string(va_list arg)
-{
-    free((char *)va_arg(arg, char *));
-}
-
-static void free_array(va_list arg)
-{
-    my_free_array((char **)va_arg(arg, char **));
-}
 
 static int check_flag(char flag, va_list list,
     const struct flag f[])

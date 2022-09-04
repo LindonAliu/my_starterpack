@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** cpool day04 task01
+** my_swap
 ** File description:
-** my_swap.c
+** Swap two int.
 */
 
 void my_swap(int *a, int *b)

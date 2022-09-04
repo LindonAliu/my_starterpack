@@ -8,6 +8,7 @@
 #ifndef MY_ARRAY_H_
     #define MY_ARRAY_H_
 
+    #include <stddef.h>
 
 /**
  * @brief Create a string array from a string.
@@ -76,7 +77,7 @@ int my_get_line_tab(const char **array, const char *to_find);
  * @param array The string array.
  * @return Return the length of the string array.
  */
-int my_len_array(const char **array);
+size_t my_len_array(const char **array);
 
 
 /**
@@ -85,6 +86,5 @@ int my_len_array(const char **array);
  * @param size The size of the array.
  */
 void my_sort_int_array(int *array, int size);
-
 
 #endif/* !MY_ARRAY_H_ */

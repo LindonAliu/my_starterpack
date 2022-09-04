@@ -11,6 +11,7 @@
 #include "str.h"
 #include "my_printf.h"
 #include "opt_parser.h"
+
 #define ERR_LOG(...) fprintf(stderr, __VA_ARGS__)
 #define LOG(...) my_printf(__VA_ARGS__)
 
@@ -34,7 +35,9 @@ static bool is_opt_valid(const struct parser_entry *entry, const char *arg)
     return my_strcmp(arg, entry->opt) == 0 || my_strcmp(arg, entry->optlong) == 0;
 }
 
-static int handle_argument_entry(int argc, char *argv[], const struct parser_entry *entry, const struct parser_ctx *ctx)
+static int handle_argument_entry(int argc, char *argv[],
+    const struct parser_entry *entry,
+    const struct parser_ctx *ctx)
 {
     int ret = 0;
 
@@ -58,9 +61,8 @@ static int handle_argument_entry(int argc, char *argv[], const struct parser_ent
 static int check_opt(int argc, char *argv[], const struct parser_ctx *ctx)
 {
     for (size_t i = 0; i < ctx->entries_size; ++i) {
-        if (is_opt_valid(&ctx->entries[i], argv[0])) {
+        if (is_opt_valid(&ctx->entries[i], argv[0]))
             return handle_argument_entry(argc, argv, &ctx->entries[i], ctx);
-        }
     }
     ERR_LOG("Unkown parameter: '%s'.\n", argv[0]);
     return 1;

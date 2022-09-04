@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** str_to_array
+** my_stwa_separator
 ** File description:
-** FreeKOSOVO
+** Create a string array from a string.
 */
 
 #include <stdlib.h>
@@ -12,7 +12,7 @@
 #include "char.h"
 #include "str.h"
 
-static int count_word_2(char const *str, char const *separator)
+static int count_word_2(const char *str, const char *separator)
 {
     int counter = 0;
 
@@ -35,7 +35,7 @@ static char **mem_alloc_2d_array_2(int nb_rows)
     return arr;
 }
 
-static int size_word_2(char const *str, int i, char const *separator)
+static int size_word_2(const char *str, int i,const char *separator)
 {
     int k = 0;
 
@@ -46,7 +46,7 @@ static int size_word_2(char const *str, int i, char const *separator)
     return (k);
 }
 
-char **my_stwa_separator(char const *str, char const *separator)
+char **my_stwa_separator(const char *str, const char *separator)
 {
     int nb_word = count_word_2(str, separator);
     char **tab = mem_alloc_2d_array_2(nb_word);

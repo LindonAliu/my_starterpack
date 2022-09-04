@@ -7,20 +7,11 @@
 
 #include "my_printf.h"
 
-static void flag_c(va_list arg)
-{
-    my_putchar(va_arg(arg, int));
-}
-
-static void flag_i(va_list arg)
-{
-    my_put_nbr(va_arg(arg, int));
-}
-
-static void flag_s(va_list arg)
-{
-    my_putstr(va_arg(arg, char *));
-}
+void flag_s(va_list arg);
+void flag_c(va_list arg);
+void flag_number(va_list arg);
+void flag_e(va_list arg);
+void flag_t(va_list arg);
 
 static int check_flag(char flag, va_list list, const struct flag_printf f[])
 {
@@ -33,10 +24,6 @@ static int check_flag(char flag, va_list list, const struct flag_printf f[])
             my_putchar('%');
             return 1;
         }
-        if (flag == 't') {
-            my_show_word_array((const char **)va_arg(list, char **));
-            return 1;
-        }
     }
     return 0;
 }
@@ -47,8 +34,10 @@ void my_printf(const char *format, ...)
     const struct flag_printf f[] = {
         {'s', &flag_s},
         {'c', &flag_c},
-        {'i', &flag_i},
-        {'d', &flag_i},
+        {'i', &flag_number},
+        {'d', &flag_number},
+        {'e', &flag_e},
+        {'t', &flag_t}
     };
 
     va_start(list, format);

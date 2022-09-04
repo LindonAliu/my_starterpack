@@ -8,12 +8,12 @@
 #ifndef ALL_LIB_H_
     #define ALL_LIB_H_
 
-    #include "array.h"
-    #include "char.h"
-    #include "color.h"
-    #include "freef.h"
     #include "my.h"
-    #include "my_printf.h"
     #include "str.h"
+    #include "char.h"
+    #include "array.h"
+    #include "freef.h"
+    #include "color.h"
+    #include "my_printf.h"
 
 #endif/* !ALL_LIB_H_ */

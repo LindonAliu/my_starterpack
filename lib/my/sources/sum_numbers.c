@@ -2,11 +2,10 @@
 ** EPITECH PROJECT, 2021
 ** sum_numbers
 ** File description:
-** FreeKOSOVO
+** Adding all the numbers.
 */
 
 #include <stdarg.h>
-#include "my.h"
 
 int sum_numbers(int n, ...)
 {

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** my_strlowcase
 ** File description:
-** #FreeKOSOVO
+** Convert the given string to lowercase.
 */
 
 char *my_strlowcase(char *str)

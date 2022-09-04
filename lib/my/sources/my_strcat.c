@@ -7,10 +7,10 @@
 
 #include <stdlib.h>
 
-int my_strlen(const char *str);
+size_t my_strlen(const char *str);
 int my_freef(char *s, ...);
 char *my_strdup(const char *src);
-char *my_strncpy(char *dest, const char *src, int n);
+char *my_strncpy(char *dest, const char *src, size_t n);
 
 char *my_strcat(char *dest, const char *src)
 {
@@ -20,7 +20,7 @@ char *my_strcat(char *dest, const char *src)
         malloc(sizeof(char) * (len_dest + len_src + 1));
 
     if (result == NULL)
-        return NULL;
+        return result;
     my_strncpy(result, dest, len_dest);
     my_strncpy(result + len_dest, src, len_src);
     result[len_dest + len_src] = '\0';

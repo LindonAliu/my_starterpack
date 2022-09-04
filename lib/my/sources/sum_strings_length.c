@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** sum_strings_length
 ** File description:
-** FreeKOSOVO
+** Return the number of bytes in all strings.
 */
 
 #include <stdarg.h>

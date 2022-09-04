@@ -12,6 +12,5 @@
 
 int main(int argc UNUSED, const char *argv[] UNUSED)
 {
-    
-    return (0);
+    return 0;
 }

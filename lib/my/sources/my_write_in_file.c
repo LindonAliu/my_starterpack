@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** my_write_in_file
 ** File description:
-** FreeKOSOVO
+** Write the text in a file.
 */
 
 #include <sys/types.h>
@@ -10,9 +10,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-int my_strlen(char const *str);
+size_t my_strlen(const char *str);
 
-int my_write_in_file(char const *filepath, char const *text)
+int my_write_in_file(const char *filepath, const char *text)
 {
     int fd = open(filepath, O_CREAT | O_WRONLY | O_TRUNC, 00666);
 

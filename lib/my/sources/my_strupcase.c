@@ -2,10 +2,8 @@
 ** EPITECH PROJECT, 2021
 ** my_strupcase
 ** File description:
-** #FreeKOSOVO
+** Convert the given string to uppercase.
 */
-
-#include "my.h"
 
 char *my_strupcase(char *str)
 {

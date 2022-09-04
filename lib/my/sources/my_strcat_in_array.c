@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** my_strcat_in_array
 ** File description:
-** FreeKOSOVO
+** Concate a string in all the string of the array.
 */
 
 #include <stddef.h>

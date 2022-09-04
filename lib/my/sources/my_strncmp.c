@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2021
 ** my_strncmp
 ** File description:
-** #FreeKOSOVO
+** Compare two strings.
 */
 
 #include <stddef.h>
 
-int my_strncmp(char const *s1, char const *s2, size_t n)
+int my_strncmp(const char *s1, const char *s2, size_t n)
 {
     int diff = *s1 - *s2;
 

@@ -2,20 +2,20 @@
 ** EPITECH PROJECT, 2021
 ** my_strdup
 ** File description:
-** #FreeKOSOVO
+** Duplicate a string.
 */
 
 #include <stdlib.h>
 
-int my_strlen(char const *str);
-char *my_strcpy(char *dest, char const *src);
+size_t my_strlen(const char *str);
+char *my_strcpy(char *dest, const char *src);
 
-char *my_strdup(char const *src)
+char *my_strdup(const char *src)
 {
     char *str = malloc(sizeof(char) * (my_strlen(src) + 1));
 
-    if (str == NULL)
-        return NULL;
+    if (!str)
+        return str;
     str = my_strcpy(str, src);
     return str;
 }

@@ -5,7 +5,9 @@
 ** Reverse a string in place.
 */
 
-int my_strlen(const char *str);
+#include <stddef.h>
+
+size_t my_strlen(const char *str);
 
 char *my_revstr(char *str)
 {
