@@ -6,17 +6,10 @@
 */
 
 #include <stddef.h>
-#include "my.h"
-#include "my_project.h"
 
-
-int handly_error(int const argc, char const *argv[], char const *env[])
+int handly_error(int argc, const char *argv[], const char *env[])
 {
-    if (env == NULL || env[0] == NULL)
-        return (-1);
-    if (argc == 1)
-        return (-1);
-    if (argv[1] == NULL)
+    if (env == NULL || env[0] == NULL || argc != 2 || argv == NULL)
         return (-1);
     return (0);
 }

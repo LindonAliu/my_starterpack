@@ -8,6 +8,9 @@
 #ifndef MY_PROJECT_H_
     #define MY_PROJECT_H_
 
-int handly_error(int const argc, char const *argv[], char const *env[]);
+    #include "my.h"
 
-#endif /* !MY_PROJECT_H_ */
+int handly_error(int argc UNUSED, const char *argv[] UNUSED, const char *env[]);
+int function(const char *str);
+
+#endif/* !MY_PROJECT_H_ */

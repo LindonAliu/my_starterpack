@@ -11,8 +11,10 @@
 
 #include "my_printf.h"
 
-int function(char const *str)
+int function(const char *str)
 {
+    if (!str)
+        return (-1);
     my_printf("%s\n", str);
     return (0);
 }

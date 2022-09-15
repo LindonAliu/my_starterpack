@@ -8,9 +8,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "all_lib.h"
+#include "my_project.h"
 
-int main(int argc UNUSED, const char *argv[] UNUSED)
+int main(int argc, const char *argv[], const char *env[])
 {
-    return 0;
+    if (handly_error(argc, argv, env) == -1 || function(argv[1]) == -1)
+        return (84);
+    return (0);
 }

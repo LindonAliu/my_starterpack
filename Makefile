@@ -12,7 +12,8 @@ SRC_NT		=	main.c
 
 CC			:=	gcc
 
-SRC_TEST	=
+SRC_TEST	=	tests_error.c \
+				tests_redirect_output.c
 
 SRC_EXEC	=	$(SRC_ALL) $(SRC_NT)
 
