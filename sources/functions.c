@@ -13,6 +13,8 @@
 
 int function(const char *str)
 {
+    if (str == NULL)
+        return -1;
     my_printf("%s\n", str);
     return 0;
 }

@@ -15,9 +15,9 @@ Test(all_errors, test_argc)
     const char *env_error[] = {NULL, NULL};
     const char *argc[] = {"./bin", "argument"};
 
-    cr_assert_eq(handly_error(0, argc, env), -1);
-    cr_assert_eq(handly_error(2, NULL, env), -1);
-    cr_assert_eq(handly_error(2, argc, NULL), -1);
-    cr_assert_eq(handly_error(2, argc, env_error), -1);
-    cr_assert_eq(handly_error(2, argc, env), 0);
+    cr_assert_eq(error_handling(0, argc, env), -1);
+    cr_assert_eq(error_handling(2, NULL, env), -1);
+    cr_assert_eq(error_handling(2, argc, NULL), -1);
+    cr_assert_eq(error_handling(2, argc, env_error), -1);
+    cr_assert_eq(error_handling(2, argc, env), 0);
 }
