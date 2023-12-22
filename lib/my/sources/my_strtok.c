@@ -9,40 +9,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int check_letter(char separator, char c, int i, int check)
-{
-    if (check != 0)
-        return (0);
-    if (separator == c)
-        return (i);
-    return (0);
-}
+#include "string.h"
+#include "array.h"
 
-int get_size_str(const char *str, const char *delim)
+char *my_strtok(const char *str, const char *delim)
 {
-    int result = 0;
+    static char **save = NULL;
+    static int i = 0;
 
-    for (int i = 0; delim[i] != '\0'; i++) {
-        for (int j = 0; str[j] != '\0'; j++) {
-            result += check_letter(delim[i], str[j], j, result);
-        }
+    if (save == NULL) {
+        save = my_stwa_separator(str, delim);
     }
-    return (result);
-}
-
-char *my_strtok(char *str, const char *delim)
-{
-    char *result = NULL;
-    int len = 0;
-
-    len = get_size_str(str, delim);
-    if (len == 0)
-        return (NULL);
-    result = malloc(sizeof(char) * (len + 1));
-    if (result == NULL)
-        return (NULL);
-    for (int i = 0; i != len; i++) {
-        result[i] = str[i];
+    if (str == NULL) {
+        if (save[i - 1] != NULL)
+            i++;
+        return (save[i - 1]);
+    } else {
+        i = 0;
+        save = my_stwa_separator(str, delim);
+        return (save[i]);
     }
-    return (result);
 }
