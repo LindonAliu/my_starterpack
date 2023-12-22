@@ -7,9 +7,9 @@
 
 #include <stddef.h>
 
-int handly_error(int argc, const char *argv[], const char *env[])
+int error_handling(int argc, const char *argv[], const char *env[])
 {
     if (env == NULL || env[0] == NULL || argc != 2 || argv == NULL)
-        return (-1);
-    return (0);
+        return -1;
+    return 0;
 }

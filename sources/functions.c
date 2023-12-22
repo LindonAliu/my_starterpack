@@ -9,13 +9,10 @@
 #include <stddef.h>
 #include <string.h>
 
-#include "my_printf.h"
-#include "color.h"
+#include "all_lib.h"
 
 int function(const char *str)
 {
-    if (!str)
-        return -1;
     my_printf("%s\n", str);
     return 0;
 }

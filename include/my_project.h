@@ -10,8 +10,7 @@
 
     #include "my.h"
 
-int handly_error(int argc UNUSED,
-    const char *argv[] UNUSED, const char *env[]);
+int error_handling(int argc, const char *argv[], const char *env[]);
 int function(const char *str);
 
 #endif/* !MY_PROJECT_H_ */

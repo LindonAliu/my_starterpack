@@ -10,6 +10,8 @@
 
     #include <stddef.h>
 
+char *my_strtok(const char *str, const char *delim);
+
 /**
  * @brief Calculate the length of a string.
  * @param str The string to test.

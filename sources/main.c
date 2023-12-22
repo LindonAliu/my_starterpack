@@ -12,7 +12,7 @@
 
 int main(int argc, const char *argv[], const char *env[])
 {
-    if (handly_error(argc, argv, env) == -1 || function(argv[1]) == -1)
+    if (error_handling(argc, argv, env) == -1 || function(argv[1]) == -1)
         return (84);
     return (0);
 }
