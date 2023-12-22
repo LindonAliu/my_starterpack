@@ -5,9 +5,10 @@
 ** Memory management
 */
 
-#ifndef MEMORY_H_
-    #define MEMORY_H_
+#ifndef MEMORY_H
+    #define MEMORY_H
 
+    #include <stddef.h>
 
 /**
  * @brief Copy the nmemb elements of the array src to the array dest.

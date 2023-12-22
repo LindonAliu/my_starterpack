@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-size_t my_strlen(const char *str);
+#include "str.h"
 
 char *my_strncat(char *dest, const char *src, size_t nb)
 {

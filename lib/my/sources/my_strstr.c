@@ -8,14 +8,12 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-char *my_strdup(const char *str);
-int my_strncmp(const char *s1, const char *s2, size_t n);
-size_t my_strlen(const char *str);
+#include "str.h"
 
 char *my_strstr(const char *haystack, const char *needle)
 {
     while (*haystack != '\0') {
-        if (*haystack == *needle && 
+        if (*haystack == *needle &&
             my_strncmp(haystack, needle, my_strlen(needle)) == 0)
             break;
         haystack++;

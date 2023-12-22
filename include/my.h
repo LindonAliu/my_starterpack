@@ -5,8 +5,8 @@
 ** #FreeKOSOVO
 */
 
-#ifndef MY_H_
-    #define MY_H_
+#ifndef MY_H
+    #define MY_H
 
     #define ATOD(x) (x - '0')
     #define DTOA(x) (x + '0')
@@ -30,7 +30,7 @@ int sum_strings_length(int n, ...);
 /**
  * @brief Adding all the numbers
  * @param n The number of arguments.
- * @param ... 
+ * @param ...
  * @return Return the sum of all the numbers.
  */
 int sum_numbers(int n, ...);

@@ -8,7 +8,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-void my_free_array(char **array);
+#include "array.h"
 
 void free_string(va_list arg)
 {

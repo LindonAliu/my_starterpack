@@ -7,8 +7,7 @@
 
 #include <stdlib.h>
 
-char *my_file_in_str(const char *filepath);
-char *my_strncpy(char *dest, const char *src, size_t n);
+#include "str.h"
 
 char *my_get_first_line_file(const char *filepath)
 {

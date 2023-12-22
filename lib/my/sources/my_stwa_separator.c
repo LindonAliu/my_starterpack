@@ -35,7 +35,7 @@ static char **mem_alloc_2d_array_2(int nb_rows)
     return arr;
 }
 
-static int size_word_2(const char *str, int i,const char *separator)
+static int size_word_2(const char *str, int i, const char *separator)
 {
     int k = 0;
 

@@ -5,8 +5,8 @@
 ** FreeKOSOVO
 */
 
-#ifndef MY_PRINTF_H_
-    #define MY_PRINTF_H_
+#ifndef MY_PRINTF_H
+    #define MY_PRINTF_H
 
     #include <stdarg.h>
     #include <stddef.h>
@@ -20,6 +20,21 @@
 struct flag_printf {
     char flag;
     void (*ptr_function) (va_list);
+};
+
+void flag_s(va_list arg);
+void flag_c(va_list arg);
+void flag_number(va_list arg);
+void flag_e(va_list arg);
+void flag_t(va_list arg);
+
+static const struct flag_printf FLAGS_PRINTF[] = {
+    {'s', &flag_s},
+    {'c', &flag_c},
+    {'i', &flag_number},
+    {'d', &flag_number},
+    {'e', &flag_e},
+    {'t', &flag_t}
 };
 
 

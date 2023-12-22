@@ -4,8 +4,8 @@
 ** File description:
 ** FreeKOSOVO
 */
-#ifndef MY_CHAR_H_
-    #define MY_CHAR_H_
+#ifndef MY_CHAR_H
+    #define MY_CHAR_H
 
 
 /**

@@ -7,17 +7,14 @@
 
 #include <stdlib.h>
 
-size_t my_strlen(const char *str);
-int my_freef(char *s, ...);
-char *my_strdup(const char *src);
-char *my_strncpy(char *dest, const char *src, size_t n);
+#include "str.h"
+#include "freef.h"
 
 char *my_strcat(char *dest, const char *src)
 {
     int len_dest = my_strlen(dest);
     int len_src = my_strlen(src);
-    char *result =
-        malloc(sizeof(char) * (len_dest + len_src + 1));
+    char *result = malloc(sizeof(char) * (len_dest + len_src + 1));
 
     if (result == NULL)
         return result;
@@ -27,5 +24,5 @@ char *my_strcat(char *dest, const char *src)
     my_freef("%s", dest);
     dest = my_strdup(result);
     my_freef("%s", result);
-    return (dest);
+    return dest;
 }

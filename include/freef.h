@@ -5,8 +5,8 @@
 ** FreeKOSOVO
 */
 
-#ifndef MY_FREEF_H_
-    #define MY_FREEF_H_
+#ifndef MY_FREEF_H
+    #define MY_FREEF_H
 
     #include <stdarg.h>
 
@@ -39,5 +39,10 @@ void my_freef(const char *format, ...);
 
 void free_string(va_list arg);
 void free_array(va_list arg);
+
+static const struct flag FLAGS_FREEF[] = {
+    {'s', &free_string},
+    {'t', &free_array},
+};
 
 #endif/* !MY_FREEF_H_ */

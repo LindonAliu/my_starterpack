@@ -8,12 +8,12 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-char *my_strcat(char *dest, const char *src);
-char *my_strdup(const char *str);
+#include "str.h"
 
 void my_strcat_in_array(char **arr, const char *str)
 {
-    char *tmp;
+    char *tmp = NULL;
+
     for (int i = 0; arr[i] != NULL; i++) {
         tmp = my_strdup(arr[i]);
         free(arr[i]);

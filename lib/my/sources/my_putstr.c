@@ -7,7 +7,7 @@
 
 #include <unistd.h>
 
-int my_strlen(const char *str);
+#include "str.h"
 
 void my_putstr(const char *str)
 {

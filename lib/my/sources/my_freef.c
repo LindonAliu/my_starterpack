@@ -7,12 +7,11 @@
 
 #include "freef.h"
 
-static int check_flag(char flag, va_list list,
-    const struct flag f[])
+static int check_flag(char flag, va_list list)
 {
     for (int i = 0; i < NBR_FLAGS; i++) {
-        if (flag == f[i].flag) {
-            f[i].ptr_function(list);
+        if (flag == FLAGS_FREEF[i].flag) {
+            FLAGS_FREEF[i].ptr_function(list);
             return 1;
         }
     }
@@ -22,15 +21,11 @@ static int check_flag(char flag, va_list list,
 void my_freef(const char *format, ...)
 {
     va_list list;
-    const struct flag f[] = {
-        {'s', &free_string},
-        {'t', &free_array},
-    };
 
     va_start(list, format);
     for (int i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%')
-            i += check_flag(format[i + 1], list, f);
+            i += check_flag(format[i + 1], list);
     }
     va_end(list);
 }

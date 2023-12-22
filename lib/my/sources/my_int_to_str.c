@@ -21,8 +21,8 @@ char *my_int_to_str(int nb)
     if (str == NULL)
         return (NULL);
     str[len] = '\0';
-    while (len--) {
-        str[len] = nb % 10 + '0';
+    for (int i = len; i; i--) {
+        str[i - 1] = nb % 10 + '0';
         nb /= 10;
     }
     return (str);

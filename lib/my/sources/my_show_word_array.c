@@ -7,8 +7,7 @@
 
 #include <stddef.h>
 
-void my_putstr(const char *src);
-void my_putchar(char c);
+#include "my_printf.h"
 
 void my_show_word_array(const char **array)
 {

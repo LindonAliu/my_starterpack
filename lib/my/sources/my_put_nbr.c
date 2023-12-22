@@ -5,7 +5,8 @@
 ** Write the number in stdout.
 */
 
-void my_putchar(char c);
+#include "str.h"
+#include "my_printf.h"
 
 void my_put_nbr(int nb)
 {

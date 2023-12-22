@@ -5,8 +5,8 @@
 ** FreeKOSOVO
 */
 
-#ifndef ALL_LIB_H_
-    #define ALL_LIB_H_
+#ifndef ALL_LIB_H
+    #define ALL_LIB_H
 
     #include "my.h"
     #include "str.h"

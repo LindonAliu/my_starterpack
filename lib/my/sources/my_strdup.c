@@ -7,8 +7,7 @@
 
 #include <stdlib.h>
 
-size_t my_strlen(const char *str);
-char *my_strcpy(char *dest, const char *src);
+#include "str.h"
 
 char *my_strdup(const char *src)
 {

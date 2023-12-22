@@ -7,8 +7,8 @@
 
 #include <stdlib.h>
 
-char *my_strdup(const char *src);
-int my_len_array(const char **array);
+#include "str.h"
+#include "array.h"
 
 char **my_arrdup(const char **array)
 {

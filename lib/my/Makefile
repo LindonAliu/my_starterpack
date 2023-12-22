@@ -16,12 +16,12 @@ RM 			=	rm -f
 HEADER		=	include/*
 H_DEST		=	../../include
 
-CPPFLAGS	+=	-Wall -Wextra -iquote include
-CFLAGS		+=
+CPPFLAGS	+=	-iquote include
+CFLAGS		+=	-Wall -Wextra
 
 obj/%.o:	sources/%.c
 	@mkdir -p obj
-	$(CC) $(CPPFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 all:	header $(NAME)
 
@@ -34,7 +34,7 @@ $(NAME):	$(OBJS)
 	@$(ARCHIVER) rc $(NAME) $(OBJS)
 	@printf "\033[0;32mlibrary built\n\033[0;37m"
 
-debug:	CPPFLAGS += -g3
+debug:	CPPFLAGS += -g3 -fsanitize=address
 debug:	re
 
 re: fclean all

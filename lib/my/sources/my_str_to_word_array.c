@@ -34,6 +34,7 @@ static int count_word(const char *str)
 static char **mem_alloc_2d_array(int nb_rows)
 {
     char **arr = malloc(sizeof(char *) * (nb_rows + 1));
+
     arr[nb_rows] = NULL;
     return arr;
 }

@@ -27,16 +27,19 @@ EXEC		=	bin
 
 TEST		=	unit_tests
 
-CPPFLAGS	+=	-Wall -Wextra -iquote "include"
-CFLAGS		+=
-LDFLAGS		=	-Llib -lmy
+CPPFLAGS	+=	-iquote "include"
+CFLAGS		+=	-Wall -Wextra
+LDFLAGS		=	-Llib
+LDLIBS		=	-lmy
 
 all:	$(EXEC)
 
+tests_run:	LDLIBS += -lcriterion --coverage
 tests_run:	clean_cov $(TEST)
 	@./$(TEST) && printf "all tests are executed\n"
 	@printf "\033[0;31mcoverage :\n\033[0;37m" && gcovr --exclude tests
-	@printf "\033[0;31mbranches coverage :\n\033[0;37m" && gcovr --branches --exclude tests
+	@printf "\033[0;31mbranches coverage :\n\033[0;37m" \
+		&& gcovr --branches --exclude tests
 
 obj/build/%.o:	sources/%.c
 	@mkdir -p $(@D)
@@ -51,10 +54,11 @@ obj/tests/%.o:	tests/%.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
 $(EXEC):	$(LIBMY) $(OBJ_EXEC)
-	@$(CC) -o $(EXEC) $(OBJ_EXEC) $(LDFLAGS) && printf "\033[0;32mexecutable built\n\033[0;37m"
+	@$(CC) -o $(EXEC) $(OBJ_EXEC) $(LDFLAGS) $(LDLIBS) && \
+	printf "\033[0;32mexecutable built\n\033[0;37m"
 
 $(TEST):	$(LIBMY) $(OBJ_TEST)
-	$(CC) -o $(TEST) $(OBJ_TEST) $(LDFLAGS) -lcriterion --coverage
+	$(CC) -o $(TEST) $(OBJ_TEST) $(LDFLAGS) $(LDLIBS)
 
 $(LIBMY):
 	$(MAKE) $(DEBUGFLAGS) -C lib/my
@@ -73,7 +77,7 @@ fclean: clean
 	@rm -f $(EXEC) $(TEST)
 	@printf "\033[0;31mclean successfull\n\033[0;37m"
 
-debug: CFLAGS += -g3
+debug: CFLAGS += -g3 -fsanitize=address
 debug: DEBUGFLAGS += debug
 debug: re
 

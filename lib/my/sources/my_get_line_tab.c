@@ -7,8 +7,7 @@
 
 #include <stddef.h>
 
-size_t my_strlen(const char *str);
-int my_strncmp(const char *s1, const char *s2, size_t n);
+#include "str.h"
 
 int my_get_line_tab(const char **tab, const char *str)
 {

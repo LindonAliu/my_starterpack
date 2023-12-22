@@ -10,15 +10,15 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-size_t my_strlen(const char *str);
+#include "str.h"
 
 int my_write_in_file(const char *filepath, const char *text)
 {
     int fd = open(filepath, O_CREAT | O_WRONLY | O_TRUNC, 00666);
 
     if (fd == -1)
-        return (1);
+        return 1;
     write(fd, text, my_strlen(text));
     close(fd);
-    return (0);
+    return 0;
 }

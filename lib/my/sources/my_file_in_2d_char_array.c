@@ -8,8 +8,8 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-char *my_file_in_str(const char *filepath);
-char **my_str_to_word_array(const char *str);
+#include "str.h"
+#include "array.h"
 
 char **my_file_in_array(const char *filepath)
 {

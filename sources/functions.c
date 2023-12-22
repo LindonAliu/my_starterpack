@@ -10,11 +10,12 @@
 #include <string.h>
 
 #include "my_printf.h"
+#include "color.h"
 
 int function(const char *str)
 {
     if (!str)
-        return (-1);
+        return -1;
     my_printf("%s\n", str);
-    return (0);
+    return 0;
 }
