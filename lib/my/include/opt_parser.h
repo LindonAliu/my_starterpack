@@ -8,8 +8,12 @@
 #ifndef OPT_PARSER_H
     #define OPT_PARSER_H
 
-// #include <stddef.h>
-// #include <stdbool.h>
+    #include <stddef.h>
+    #include <stdbool.h>
+
+typedef int parser_handler_t(void *userdata, int argc, char *args[]);
+
+    #define PARSER_DEFAULT_HELP_HANDLER ((parser_handler_t *) -1)
 
 /**
  * \struct parser argument entry
@@ -23,14 +27,14 @@
  * \var argument_needed: A boolean that represent
  * if an argument is needed after the option.
  */
-// struct parser_entry {
-//     const char *opt;
-//     const char *optlong;
-//     const char *help;
-//     const char *type_info;
-//     int (*handler)(void *userdata, int argc, char *args[]);
-//     bool argument_needed;
-// };
+struct parser_entry {
+    const char *opt;
+    const char *optlong;
+    const char *help;
+    const char *type_info;
+    parser_handler_t *handler;
+    bool argument_needed;
+};
 
 /**
  * \struct parser_ctx, a container for a parser context
@@ -42,16 +46,13 @@
  * \var entries_size: The size of the entries.
  * \var userdata: The userdata of the context, passed to each function pointer.
  */
-// struct parser_ctx {
-//     const char *program_name;
-//     const struct parser_entry *entries;
-//     size_t entries_size;
-//     void *userdata;
-// };
+struct parser_ctx {
+    const char *program_name;
+    const struct parser_entry *entries;
+    size_t entries_size;
+    void *userdata;
+};
 
-// #define parser_DEFAULT_HELP_HANDLER ((int (*)(void *userdata,
-// int argc, char *args[]))-1)
-
-// int my_opt_parse(int ac, char *av[], const struct parser_ctx *ctx);
+int my_opt_parse(int ac, char *av[], const struct parser_ctx *ctx);
 
 #endif/* !OPT_PARSER_H_ */
